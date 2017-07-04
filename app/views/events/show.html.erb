@@ -21,6 +21,21 @@
 </p>
 
 <p>
+  <strong>City:</strong>
+  <%= @event.city %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @event.zipcode %>
+</p>
+
+<p>
   <strong>Guest:</strong>
   <%= @event.guest %>
 </p>
@@ -29,6 +44,10 @@
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
+
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@event.latitude},#{@event.longitude}&zoom=16&size=400x350&markers=color:blue%7Clabel:EatPoint%7C#{@event.latitude}%2C#{@event.longitude}&key=AIzaSyA6nZL7hRFHgoBpO0rayEWSsSNeU2l8-QY" %>
+
+<br>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
